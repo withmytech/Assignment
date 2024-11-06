@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw; /* Fixed typo: Changed 'wh' to 'vw' for full width */
+  height: 100vh; /* Full height for the animated gradient */
+  color: #fff; /* Set text color to white */
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  overflow: hidden; /* Prevents scrolling if needed */
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 725px;
+  margin: 0 auto;
+}
+
+/* ====================
+  Typography
+==================== */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff; /* Ensures text is visible on gradient */
+}
+
+h2, h3, #score, #winner {
+  color: #fff; /* Set text color for readability */
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+/* ====================
+  Layout
+==================== */
+
+.game-container {
+  text-align: center;
+  margin: 2em 0;
+}
+
+.choices {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  padding: 2em;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.choice-image {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 2px 3px 5px #333533;
+}
+
+.choice-image:hover {
+  opacity: 95%;
+  border: 5px solid #333533;
+}
+
+/* Result Section */
+
+.result-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mirror {
+  transform: scaleX(-1); /* Flip the computer image horizontally */
+}
+
+/* Media Queries */
+
+@media (min-width: 500px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .choice-image {
+    height: 200px;
+    width: 200px;
+  }
+
+  .result-container {
+    margin-top: 3em;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+}
